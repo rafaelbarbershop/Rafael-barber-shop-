@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafael Barber Shop</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #0a0a0a;
+color: white;
+}
+
+header {
+background: linear-gradient(to right, black, #001f3f);
+text-align: center;
+padding: 40px 20px;
+}
+
+.btn {
+display: inline-block;
+background: #25D366;
+color: white;
+padding: 12px 20px;
+border-radius: 8px;
+margin-top: 15px;
+text-decoration: none;
+font-weight: bold;
+}
+
+section {
+padding: 30px 15px;
+text-align: center;
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 15px;
+}
+
+.card {
+background: #111;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 0 10px #00aaff33;
+transition: transform 0.3s;
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+
+.card img {
+width: 100%;
+height: 140px;
+object-fit: cover;
+}
+
+.card-content {
+padding: 10px;
+}
+
+.price {
+color: #00aaff;
+font-weight: bold;
+}
+
+footer {
+background: black;
+padding: 20px;
+font-size: 14px;
+}
+
+.whatsapp-float {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: #25D366;
+color: white;
+padding: 15px;
+border-radius: 50%;
+font-size: 20px;
+text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Rafael Barber Shop</h1>
+<p>Seu corte, sua identidade</p>
+<a class="btn" href="https://wa.me/556198821189?text=Quero%20agendar%20um%20horário">Chamar no WhatsApp</a>
+</header>
+
+<section>
+<h2>✂️ Serviços e Preços</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="degrade.jpg">
+<div class="card-content">
+<h3>Corte</h3>
+<p class="price">R$ 25,00</p>
+</div>
+</div>
+
+<div class="card">
+<img src="barba.jpg">
+<div class="card-content">
+<h3>Barba</h3>
+<p class="price">R$ 20,00</p>
+</div>
+</div>
+
+<div class="card">
+<img src="cortebarba.jpg">
+<div class="card-content">
+<h3>Combo Cabelo + Barba</h3>
+<p class="price">R$ 40,00</p>
+</div>
+</div>
+
+<div class="card">
+<img src="sombrancelha.jpg">
+<div class="card-content">
+<h3>Sobrancelha</h3>
+<p class="price">R$ 10,00</p>
+</div>
+</div>
+
+<div class="card">
+<img src="cortepigmentacao.jpg">
+<div class="card-content">
+<h3>Corte + Pigmentação</h3>
+<p class="price">R$ 35,00</p>
+</div>
+</div>
+
+<div class="card">
+<img src="barbapigmentacao.jpg">
+<div class="card-content">
+<h3>Barba + Pigmentação</h3>
+<p class="price">R$ 25,00</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>📅 Agendamento</h2>
+
+<select id="servico">
+<option value="Corte">Corte</option>
+<option value="Barba">Barba</option>
+<option value="Combo Cabelo + Barba">Combo</option>
+</select>
+
+<br><br>
+
+<input type="date" id="data">
+<input type="time" id="hora">
+
+<br><br>
+
+<button onclick="agendar()" class="btn">Agendar Agora</button>
+</section>
+
+<footer>
+<p>📍 Rua Santilino Moltalto, Januária MG</p>
+<p>📞 +55 61 98821-1189</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/556198821189">💬</a>
+
+<script>
+function agendar() {
+let servico = document.getElementById("servico").value;
+let data = document.getElementById("data").value;
+let hora = document.getElementById("hora").value;
+
+let mensagem = `Olá! Quero agendar:
+Serviço: ${servico}
+Data: ${data}
+Hora: ${hora}`;
+
+let url = "https://wa.me/556198821189?text=" + encodeURIComponent(mensagem);
+
+window.open(url, "_blank");
+}
+</script>
+
+</body>
+  </html>
